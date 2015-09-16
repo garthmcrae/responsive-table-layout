@@ -1,0 +1,112 @@
+.table {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 20px;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+	border-top: 1px solid #ddd;
+	line-height: 1.42857143;
+	padding: 8px;
+	text-align: right;
+	vertical-align: top;
+}
+
+.table > thead > tr > th:first-child,
+.table > tbody > tr > th:first-child,
+.table > tfoot > tr > th:first-child,
+.table > thead > tr > td:first-child,
+.table > tbody > tr > td:first-child,
+.table > tfoot > tr > td:first-child {
+	text-align: left;
+}
+
+.table > thead > tr > th {
+	vertical-align: top;
+	border-bottom: 2px solid #ddd;
+}
+
+.table > caption + thead > tr:first-child > th,
+.table > colgroup + thead > tr:first-child > th,
+.table > thead:first-child > tr:first-child > th,
+.table > caption + thead > tr:first-child > td,
+.table > colgroup + thead > tr:first-child > td,
+.table > thead:first-child > tr:first-child > td {
+	border-top: 0;
+}
+
+.table-fixed {
+	table-layout: fixed;
+}
+
+.table-responsive {
+	> thead {
+		display: none;		
+	}
+
+	> tbody,
+	> tfoot,
+	> tbody > tr,
+	> tfoot > tr,
+	> tbody > tr,
+	> tfoot > tr {
+		display: block;
+	}
+
+	> tbody > tr > td,
+	> tfoot > tr > td,
+	> tbody > tr > th,
+	> tfoot > tr > th {
+			clear: both;
+			display: block;
+			float: left;
+			text-align: left;
+			width: 100%;
+
+		&:before {
+			content: attr(title);
+			font-weight: bold;
+		}
+	}
+
+	@include breakpoint(md) {
+		> thead {
+			display: table-header-group;
+		}
+
+		> tbody {
+			display: table-row-group;
+		}
+
+		> tfoot {
+			display: table-footer-group;
+		}
+
+		> tbody > tr,
+		> tfoot > tr,
+		> tbody > tr,
+		> tfoot > tr {
+			display: table-row;
+		}
+
+		> tbody > tr > td,
+		> tfoot > tr > td,
+		> tbody > tr > th,
+		> tfoot > tr > th {
+				clear: none;
+				display: table-cell;
+				float: none;
+				text-align: right;
+				width: auto;
+
+			&:before {
+				display: none;
+			}
+		}
+	}
+}

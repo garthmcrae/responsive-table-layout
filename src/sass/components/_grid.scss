@@ -1,0 +1,113 @@
+$grid-settings: (
+	max-width: 1170px,
+	columns: 12,
+	gutter: 30px,
+	enable-box-sizing: true,
+	enable-column-pull: false,
+	enable-column-push: false,
+	enable-column-centering: false,
+	enable-column-center-reset: false,
+	enable-visible-classes: false,
+	enable-hidden-classes: false,
+	enable-no-gutter-classes: false
+) !default;
+
+@if map-get($grid-settings, enable-box-sizing) == true {
+	*, *:before, *:after {
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+	}
+}
+ 
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: map-get($grid-settings, max-width);
+	padding-left: map-get($grid-settings, gutter) * 0.5;
+	padding-right: map-get($grid-settings, gutter) * 0.5;
+	position: relative;
+}
+ 
+.row {
+	margin-left: map-get($grid-settings, gutter) * -0.5;
+	margin-right: map-get($grid-settings, gutter) * -0.5;
+	
+	&:after{
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+ 
+[class^=col-] {
+	float: left;
+	direction: ltr;
+	min-height: 1px;
+	padding-left: map-get($grid-settings, gutter) * 0.5;
+	padding-right: map-get($grid-settings, gutter) * 0.5;
+	position: relative;
+}
+ 
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@for $i from 0 through map-get($grid-settings, columns) {
+		@include breakpoint($breakpoint) {
+			.col-#{$breakpoint}-#{$i} {
+				width: percentage($i / map-get($grid-settings, columns));
+			}
+			@if map-get($grid-settings, enable-column-pull) == true {
+				.col-#{$breakpoint}-pull-#{$i} {
+					right: percentage($i / map-get($grid-settings, columns));
+				}
+			}
+			@if map-get($grid-settings, enable-column-push) == true {
+				.col-#{$breakpoint}-push-#{$i} {
+					left: percentage($i / map-get($grid-settings, columns));
+				}
+			}
+		}
+	}
+	@if map-get($grid-settings, enable-column-centering) == true {
+		.col-#{$breakpoint}-center {
+			@include breakpoint($breakpoint) {
+				display: block;
+				float: none;
+				margin-left: auto;
+				margin-right: auto;
+				clear: both;
+			}
+		}
+	}
+	@if map-get($grid-settings, enable-column-center-reset) == true {
+		.col-#{$breakpoint}-no-center {
+			@include breakpoint($breakpoint) {
+				float: left;
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+	}
+	@if map-get($grid-settings, enable-visible-classes) == true {
+		.visible-#{$breakpoint} {
+			display: none;
+			@include breakpoint($breakpoint) {
+				display: block;
+			}
+		}
+	}
+	@if map-get($grid-settings, enable-hidden-classes) == true {
+		.hidden-#{$breakpoint} {
+			@include breakpoint($breakpoint) {
+				display: none;
+			}
+		}
+	}
+	@if map-get($grid-settings, enable-no-gutter-classes) == true {
+		.no-gutter-#{$breakpoint} {
+			@include breakpoint($breakpoint) {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+}

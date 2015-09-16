@@ -1,0 +1,47 @@
+$body-colour: inherit !default;
+$body-font-family: arial, sans-serif !default;
+$body-font-weight: regular !default;
+$colour-anchor: #006791 !default;
+$unit-base: 8 !default;
+$spacing-horizontal: $unit-base;
+$spacing-vertical: $unit-base;
+
+body {
+  color: $body-colour;
+  font-family: $body-font-family;
+  font-weight: $body-font-weight;
+}
+
+a {
+	color: $colour-anchor;
+}
+
+a:active,
+a:focus,
+a:hover {
+  color: darken( $colour-anchor, 10% );
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: inherit;
+}
+
+p {
+  margin: $spacing-vertical + px 0;
+}
+
+ol,
+ul {
+  margin: $spacing-vertical + px 0 $spacing-vertical + px $spacing-horizontal * 3 + px;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%
+
+}
