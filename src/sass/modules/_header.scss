@@ -1,3 +1,32 @@
 .header {
+	@include clearfix;
+	background: whitesmoke;
+}
 
+.header-brand {
+	float: left;
+}
+
+.header-brand > a {
+	display: block;
+	padding: 8px;
+}
+
+.header-navigation {
+	float: right;
+}
+
+.header-navigation-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.header-navigation-list-item {
+	display: inline-block;
+}
+
+.header-navigation-list-item > a {
+	display: block;
+	padding: 8px;
 }

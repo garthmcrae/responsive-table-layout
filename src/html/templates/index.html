@@ -15,18 +15,22 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-3">
-			<ul>
-				<li><a href=""></a></li>
-				<li><a href=""></a>
-					<ul>
-						<li><a href=""></a></li>
-						<li><a href=""></a></li>
+			<div class="sidebar">
+				<nav class="sidebar-navigation">
+					<ul class="sidebar-navigation-list">
+						<li class="sidebar-navigation-list-item"><a href="javascript:;">Item</a></li>
+						<li class="sidebar-navigation-list-item"><a href="javascript:;">Item</a>
+							<ul class="sidebar-navigation-list">
+								<li class="sidebar-navigation-list-item"><a href="javascript:;">Item</a></li>
+								<li class="sidebar-navigation-list-item"><a href="javascript:;">Item</a></li>
+							</ul>
+						</li>
+						<li class="sidebar-navigation-list-item"><a href="javascript:;">Item</a></li>
+						<li class="sidebar-navigation-list-item"><a href="javascript:;">Item</a></li>
+						<li class="sidebar-navigation-list-item"><a href="javascript:;">Item</a></li>
 					</ul>
-				</li>
-				<li><a href=""></a></li>
-				<li><a href=""></a></li>
-				<li><a href=""></a></li>
-			</ul>
+				</nav>
+			</div>
 		</div>
 		<div class="col-md-9">
 			<div class="panes">
@@ -79,13 +83,13 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td colspan="4"><button href="">link</button></td>
+								<td colspan="4"><button class="collapse-control" data-target="collapse-1" type="button">link</button></td>
 								<td colspan="1">0.00</td>
 								<td colspan="1">0.00</td>
 								<td colspan="1">0.00</td>
 								<td colspan="1">0.00</td>
 							</tr>
-							<tr>
+							<tr class="collapse-1" class="collapse">
 								<td colspan="8">
 
 								<table class="table table-fixed">
@@ -134,6 +138,17 @@
 	</div>
 </div>
 
+<script>
+	var collapseControl = document.getElementsByClassName('collapse-control'),
+		collapse = document.getElementsByClassName('collapse');
+
+	collapseControl.addEventListener('click', function() {
+		// getAttribute('data-target');
+		for (var i=0; i < collapse.length; i++) {
+			collapse[i].classList.toggle('hidden');
+		}
+	}, false);
+</script>
 
 
 {% include '../modules/footer.html' %}

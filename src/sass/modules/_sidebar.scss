@@ -1,0 +1,16 @@
+.sidebar {}
+
+.sidebar-navigation {}
+
+.sidebar-navigation-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.sidebar-navigation-list-item {}
+
+.sidebar-navigation-list-item > a {
+	display: block;
+	padding: 8px;
+}
