@@ -1,0 +1,26 @@
+.button-anchor {
+	@include appearance(none);
+	background: transparent;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	color: $colour-anchor;
+	cursor: pointer;
+	display: inline-block;
+	font-size: inherit;
+	line-height: inherit;
+	height: auto;
+	outline: 0;
+	overflow: visible;
+	margin: 0;
+	padding: 0;
+	text-decoration: underline;
+	vertical-align: top;
+	width: auto;
+}
+
+.button-anchor:active,
+.button-anchor:focus,
+.button-anchor:hover {
+	color: darken( $colour-anchor, 10% );
+}

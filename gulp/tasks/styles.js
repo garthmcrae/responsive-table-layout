@@ -6,10 +6,10 @@ var gulp = require('gulp'),
  
 gulp.task('sass', function () {
   gulp.src('./src/sass/**/*.scss')
-    .pipe(sass({
-    	includePaths: bourbon.includePaths
-    }).on('error', sass.logError))
-    .pipe(gulp.dest('./public/css'));
+	.pipe(sass({
+		includePaths: bourbon.includePaths
+	}).on('error', sass.logError))
+	.pipe(gulp.dest('./public/css'));
 });
  
 gulp.task('sass:watch', function () {

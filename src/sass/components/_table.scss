@@ -1,7 +1,19 @@
 .table {
-	width: 100%;
-	max-width: 100%;
+	background: white;
 	margin-bottom: 20px;
+	max-width: 100%;
+	width: 100%;
+
+	@include breakpoint(md) {
+		font-size: 11px;
+	}
+	@include breakpoint(lg) {
+		font-size: 14px;
+	}
+}
+
+.table .table {
+	margin-bottom: 0;
 }
 
 .table > thead > tr > th,
@@ -10,34 +22,22 @@
 .table > thead > tr > td,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
-	border-top: 1px solid #ddd;
+	border-top: 1px solid #bababa;
 	line-height: 1.42857143;
 	padding: 8px;
-	text-align: right;
 	vertical-align: top;
 }
 
-.table > thead > tr > th:first-child,
-.table > tbody > tr > th:first-child,
-.table > tfoot > tr > th:first-child,
-.table > thead > tr > td:first-child,
-.table > tbody > tr > td:first-child,
-.table > tfoot > tr > td:first-child {
-	text-align: left;
+.table > tbody > tr > th,
+.table > tbody > tr > td {
+	border-top: 1px solid #e5e5e5;
 }
 
-.table > thead > tr > th {
+.table > thead > tr > th,
+.table > tfoot > tr > th {
+	background: #fafafa;
+	border-bottom: 1px solid #bababa;
 	vertical-align: top;
-	border-bottom: 2px solid #ddd;
-}
-
-.table > caption + thead > tr:first-child > th,
-.table > colgroup + thead > tr:first-child > th,
-.table > thead:first-child > tr:first-child > th,
-.table > caption + thead > tr:first-child > td,
-.table > colgroup + thead > tr:first-child > td,
-.table > thead:first-child > tr:first-child > td {
-	border-top: 0;
 }
 
 .table-fixed {
@@ -50,11 +50,14 @@
 	}
 
 	> tbody,
-	> tfoot,
+	> tfoot {
+		display: block;		
+	}
 	> tbody > tr,
 	> tfoot > tr,
 	> tbody > tr,
 	> tfoot > tr {
+		@include clearfix;
 		display: block;
 	}
 
@@ -70,7 +73,6 @@
 
 		&:before {
 			content: attr(title);
-			font-weight: bold;
 		}
 	}
 
@@ -92,6 +94,11 @@
 		> tbody > tr,
 		> tfoot > tr {
 			display: table-row;
+
+			&:before,
+			&:after {
+				display: none;
+			}
 		}
 
 		> tbody > tr > td,
@@ -101,7 +108,6 @@
 				clear: none;
 				display: table-cell;
 				float: none;
-				text-align: right;
 				width: auto;
 
 			&:before {

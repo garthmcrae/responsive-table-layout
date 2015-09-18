@@ -1,0 +1,82 @@
+.table.table-portfolio > thead > tr > th,
+.table.table-portfolio > tbody > tr > th,
+.table.table-portfolio > tfoot > tr > th,
+.table.table-portfolio > thead > tr > td,
+.table.table-portfolio > tbody > tr > td,
+.table.table-portfolio > tfoot > tr > td {
+	text-align: right;
+}
+
+.table.table-portfolio > thead > tr > th:first-child,
+.table.table-portfolio > tbody > tr > th:first-child,
+.table.table-portfolio > tfoot > tr > th:first-child,
+.table.table-portfolio > thead > tr > td:first-child,
+.table.table-portfolio > tbody > tr > td:first-child,
+.table.table-portfolio > tfoot > tr > td:first-child {
+	text-align: left;
+}
+
+.table-responsive.table-portfolio {
+	> tbody > tr > td,
+	> tfoot > tr > td,
+	> tbody > tr > th,
+	> tfoot > tr > th {
+		text-align: left;
+	}
+
+	@include breakpoint(md) {
+
+		> tbody > tr > td,
+		> tfoot > tr > td,
+		> tbody > tr > th,
+		> tfoot > tr > th {
+			text-align: right;
+		}
+	}
+}
+
+.table-portfolio-listing {
+	background: #ededed;
+}
+
+.table-portfolio-listing.table-portfolio-details-hidden {
+	background: white;
+}
+
+.table-portfolio-details {
+	background: #ededed;
+	
+	
+}
+
+tbody > tr.table-portfolio-details > td {
+	border-top: 1px solid #ededed;
+	padding-top: 0;
+}
+
+tr.table-portfolio-listing {
+	.icon-chevron-down {
+		display: none;
+	}
+}
+
+tr.table-portfolio-details-hidden {
+	+ tr.table-portfolio-details {
+		display: none;
+	}
+
+	.icon-chevron-down {
+		display: inline;
+	}
+
+	.icon-chevron-up {
+		display: none;
+	}
+}
+
+.table-portfolio-total-valuation > tr > th {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	font-size: em(26, 14);
+	font-weight: 300;
+	padding-top: 10px;
+}

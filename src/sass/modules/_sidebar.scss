@@ -1,16 +1,35 @@
 .sidebar {}
 
-.sidebar-navigation {}
-
 .sidebar-navigation-list {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-.sidebar-navigation-list-item {}
+.sidebar-navigation-list-item {
+	margin-bottom: 24px;
+	position: relative;
+
+	&.active > a {
+		color: #424242;
+	}
+}
 
 .sidebar-navigation-list-item > a {
+	color: #838383;
 	display: block;
-	padding: 8px;
+	padding: 8px 8px 8px 40px;
+	text-decoration: none;
+}
+
+.sidebar-navigation-list-item > a [class^="icon-"] {
+	font-size: em(32);
+	left: 0;
+	position: absolute;
+	top: 0;
+}
+
+.sidebar-navigation-list .sidebar-navigation-list > .sidebar-navigation-list-item {
+	font-size: em(14);
+	margin-bottom: 0;
 }

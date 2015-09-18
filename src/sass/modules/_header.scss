@@ -1,15 +1,33 @@
 .header {
 	@include clearfix;
-	background: whitesmoke;
+	background: $colour-brand;
+	color: white;
+	margin: 0 -8px 16px;
+
+	@include breakpoint(sm) {
+		margin: 0 -14px 26px;
+	}
 }
 
 .header-brand {
 	float: left;
+	font-size: em(28);
+
+	@include breakpoint(md) {
+		margin-left: 50%;
+		transform: translate(-45px, 0);
+	}
 }
 
 .header-brand > a {
+	color: white;
 	display: block;
 	padding: 8px;
+	text-decoration: none;
+
+	@include breakpoint(sm) {
+		padding: 14px;
+	}
 }
 
 .header-navigation {
@@ -27,6 +45,33 @@
 }
 
 .header-navigation-list-item > a {
+	color: white;
 	display: block;
 	padding: 8px;
+	text-decoration: none;
+
+	@include breakpoint(sm) {
+		padding: 14px;
+	}
+}
+
+.header-navigation-list-item-username {
+	line-height: 46px;
+	vertical-align: bottom;
+
+	@include breakpoint(sm) {
+		line-height: 56px;
+	}
+
+	@include breakpoint(md) {
+		padding: 0 40px 0 10px;
+	}
+
+	@include breakpoint(lg) {
+		padding: 0 160px 0 10px;
+	}
+}
+
+.header-navigation-list-item > a [class^="icon-"] {
+	font-size: em(28);
 }

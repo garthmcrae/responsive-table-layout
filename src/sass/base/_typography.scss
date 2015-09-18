@@ -1,0 +1,72 @@
+$body-colour: inherit !default;
+$body-font-family: arial, sans-serif !default;
+$body-font-weight: regular !default;
+$colour-anchor: #006791 !default;
+$unit-base: 8 !default;
+$spacing-horizontal: $unit-base;
+$spacing-vertical: $unit-base;
+
+body {
+	color: $body-colour;
+	font-family: $body-font-family;
+	font-weight: $body-font-weight;
+}
+
+a {
+	color: $colour-anchor;
+}
+
+a:active,
+a:focus,
+a:hover {
+	color: darken( $colour-anchor, 10% );
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	color: inherit;
+}
+
+p {
+	margin: $spacing-vertical + px 0;
+}
+
+ol,
+ul {
+	margin: $spacing-vertical + px 0 $spacing-vertical + px $spacing-horizontal * 3 + px;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	width: 100%
+
+}
+
+.heading-type-1 {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	font-size: em(40);
+	font-weight: 300;
+}
+
+.heading-type-2 {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	font-size: em(30);
+	font-weight: 300;
+}
+
+.type-unit {
+	color: #a5a5a5;
+	font-size: em(12);
+}
+
+.type-badge {
+	background: #fafafa;
+	border: 1px solid #d9d9d9;
+	border-radius: 4px;
+	font-size: em(12);
+	padding: em(2, 12) em(4, 12);
+}

@@ -1,0 +1,58 @@
+@font-face {
+	font-family: 'icons';
+	src:url('../fonts/icons.eot?u36k02');
+	src:url('../fonts/icons.eot?#iefixu36k02') format('embedded-opentype'),
+		url('../fonts/icons.ttf?u36k02') format('truetype'),
+		url('../fonts/icons.woff?u36k02') format('woff'),
+		url('../fonts/icons.svg?u36k02#icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-chevron-up:before {
+	content: "\e609";
+}
+.icon-chevron-down:before {
+	content: "\e60a";
+}
+.icon-portfolio:before {
+	content: "\e600";
+}
+.icon-preferences:before {
+	content: "\e601";
+}
+.icon-reports:before {
+	content: "\e602";
+}
+.icon-transactions:before {
+	content: "\e603";
+}
+.icon-overview:before {
+	content: "\e604";
+}
+.icon-question:before {
+	content: "\e605";
+}
+.icon-menu:before {
+	content: "\e606";
+}
+.icon-user:before {
+	content: "\e607";
+}
+.icon-great-bank:before {
+	content: "\e608";
+}

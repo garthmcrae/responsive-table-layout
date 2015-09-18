@@ -1,13 +1,20 @@
 <header class="header">
 	<div class="container">
 		<div class="header-brand">
-			<a href="">{{ macro.icon("home", "Home")}}</a>
+			<a href="">{{ macro.iconLabel("great-bank", "Great Bank") }}</a>
 		</div>
 		<nav class="header-navigation" role="navigation">
 			<h2 class="screen-reader">Brand Navigation</h2>
 			<ul class="header-navigation-list">
-				<li class="header-navigation-list-item"><a href="">Item 1</a></li>
-				<li class="header-navigation-list-item"><a href="">Item 2</a></li>
+				<li class="header-navigation-list-item header-navigation-list-item-menu">
+					<a href="">{{ macro.iconLabel("menu", "Menu") }}</a>
+				</li>
+				<li class="header-navigation-list-item  header-navigation-list-item-username">
+					Walter White
+				</li>
+				<li class="header-navigation-list-item header-navigation-list-item-menu">
+					<a href="">{{ macro.iconLabel("user", "Menu") }}</a>
+				</li>
 			</ul>
 		</nav>
 	</div>

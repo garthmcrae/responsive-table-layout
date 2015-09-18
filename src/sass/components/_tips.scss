@@ -1,0 +1,141 @@
+[data-tips] {
+	position: relative;
+	text-decoration: none;
+	font-size: em(18px);
+	vertical-align: middle;
+}
+
+[data-tips]:after,
+[data-tips]:before {
+	position: absolute;
+	z-index: 9;
+}
+
+[data-tips]:after {
+	background: $colour-brand;
+	border-radius: em(6);
+	color: white;
+	content: attr(data-tips);
+	font-size: em(14);
+	line-height: 1.25;
+	padding: em(8) em(16) em(8);
+	white-space: nowrap;
+}
+
+[data-tips]:before {
+	border-style: solid;
+	border-width: em(8);
+	content: "";
+	height: 0;
+	opacity: 0;
+	width: 0;
+}
+
+[data-tips]:hover:before {
+	@include transition(transform 0.9s $ease-in-out-back, opacity 0.9s $ease-in-out-back);
+	opacity: 1;
+}
+
+/* Top tips */
+[data-tips].tip-top:after,
+[data-tips].tip-top:before {
+	bottom: 90%;
+	left: 50%;
+	margin-bottom: em(14);
+}
+
+[data-tips].tip-top:before {
+	@include transform(translate(-50%, em(-10)));
+	border-color: $colour-brand transparent transparent transparent;
+	margin-bottom: 0;
+}
+
+[data-tips].tip-top:hover:before {
+	@include transform(translate(-50%, 0));
+	bottom: 100%;
+}
+
+[data-tips].tip-top:after {
+	@include transform(scale(0) translate(-50%, em(-10)));
+}
+
+[data-tips].tip-top:hover:after {
+	@include transform(scale(1) translate(-50%, 0));
+	@include transition(transform 0.3s $ease-out-back);
+	transform-origin: 0 bottom;
+}
+
+/* Bottom tip */
+[data-tips].tip-bottom:after,
+[data-tips].tip-bottom:before {
+	top: 90%;
+	left: -9999px;
+	margin-top: em(12);
+}
+
+[data-tips].tip-bottom:before {
+	@include transform(translateY(em(10)));
+	border-color: transparent transparent $colour-brand transparent;
+	margin-top: 0;
+}
+
+[data-tips].tip-bottom:hover:after,
+[data-tips].tip-bottom:hover:before {
+	@include transform(translateY(0));
+	top: 100%;
+	left: 0;
+}
+
+[data-tips].tip-bottom:hover:before {
+	left: em(15);
+}
+
+/* Right tip */
+[data-tips].tip-right:after,
+[data-tips].tip-right:before {
+	top: -9999px;
+	left: 96%;
+	margin-left: em(12);
+}
+
+[data-tips].tip-right:before {
+	@include transform(translateX(em(10)));
+	border-color: transparent $colour-brand transparent transparent;
+	margin-left: 0;
+}
+
+[data-tips].tip-right:hover:after,
+[data-tips].tip-right:hover:before {
+	@include transform(translateX(0));
+	left: 100%;
+	top: 0;
+}
+
+[data-tips].tip-right:hover:before {
+	top: em(7);
+}
+
+/* Left tip */
+[data-tips].tip-left:after,
+[data-tips].tip-left:before {
+	top: -9999px;
+	right: 96%;
+	margin-right: em(12);
+}
+
+[data-tips].tip-left:before {
+	@include transform(translateX(em(-10)));
+	border-color: transparent transparent transparent $colour-brand;
+	margin-right: 0;
+}
+
+[data-tips].tip-left:hover:after,
+[data-tips].tip-left:hover:before {
+	@include transform(translateX(0));
+	right: 100%;
+	top: 0;
+}
+
+[data-tips].tip-left:hover:before {
+	top: em(7);
+}

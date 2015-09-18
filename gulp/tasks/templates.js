@@ -5,12 +5,12 @@ swig = require('gulp-swig');
  
 gulp.task('html', function() {
   gulp.src('./src/html/templates/*.html')
-    .pipe(swig({
-      defaults: {
-        cache: false
-      }
-    }))
-    .pipe(gulp.dest('./public/'))
+	.pipe(swig({
+		defaults: {
+			cache: false
+		}
+	}))
+	.pipe(gulp.dest('./public/'))
 });
 
 gulp.task('html:watch', function () {
