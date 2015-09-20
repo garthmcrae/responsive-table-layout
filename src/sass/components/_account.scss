@@ -1,0 +1,21 @@
+.account {
+	position: relative;
+	padding-left: 48px;
+}
+
+.account-image {
+	border-radius: 50%;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+}
+
+.account-name {
+	color: #676767;
+}
+
+.account-details {
+	color: #838383;
+	font-size: em(12, 14);
+}
