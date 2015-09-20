@@ -1,4 +1,49 @@
-.sidebar {}
+.sidebar {
+	position: relative;
+	z-index: 1;
+}
+
+.sidebar-navigation {
+	background: white;
+	border: 1px solid #bababa;
+	border-radius: 5px;
+	box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	min-width: 240px;
+	padding: 16px;
+	position: absolute;
+	top: 48px;
+
+	@include breakpoint(sm) {
+		background: transparent;
+		border: none;
+		box-shadow: none;
+		min-width: auto;
+		padding: 0;
+		position: relative;
+		top: 0;
+	}
+
+	@include breakpoint(md) {
+		background: white;
+		border: 1px solid #bababa;
+		border-radius: 5px;
+		box-shadow: 0 6px 12px rgba(0,0,0,.175);
+		min-width: 240px;
+		padding: 16px;
+		position: absolute;
+		top: 48px;
+	}
+
+	@include breakpoint(lg) {
+		background: transparent;
+		border: none;
+		box-shadow: none;
+		min-width: auto;
+		padding: 0;
+		position: relative;
+		top: 0;
+	}
+}
 
 .sidebar-navigation-list {
 	list-style: none;
@@ -18,8 +63,12 @@
 .sidebar-navigation-list-item > a {
 	color: #838383;
 	display: block;
-	padding: 8px 8px 8px 40px;
+	padding: 8px 8px 8px 44px;
 	text-decoration: none;
+
+	&:hover {
+		color: lighten(#838383, 5%);
+	}
 }
 
 .sidebar-navigation-list-item > a [class^="icon-"] {
@@ -32,4 +81,37 @@
 .sidebar-navigation-list .sidebar-navigation-list > .sidebar-navigation-list-item {
 	font-size: em(14);
 	margin-bottom: 0;
+}
+
+.sidebar-navigation.sidebar-navigation-collapsed-mobile {
+	display: none;
+
+	@include breakpoint(sm) {
+		display: block;
+	}
+
+	@include breakpoint(md) {
+		display: none;
+	}
+
+	@include breakpoint(lg) {
+		display: block;
+	}
+}
+
+.sidebar-navigation-toggle {
+	display: inline-block;
+	margin-bottom: 16px;
+
+	@include breakpoint(sm) {
+		display: none;
+	}
+
+	@include breakpoint(md) {
+		display: inline-block;
+	}
+
+	@include breakpoint(lg) {
+		display: none;
+	}
 }

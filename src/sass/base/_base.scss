@@ -29,5 +29,9 @@ img {
 	background: white;
 	border-radius: 5px;
 	margin-bottom: 26px;
-	padding: 20px;
+	padding: 5px 10px;
+
+	@include breakpoint(md) {
+		padding: 5px 20px;
+	}
 }

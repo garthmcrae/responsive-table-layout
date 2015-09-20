@@ -1,3 +1,29 @@
+.button {
+	@include appearance(none);
+	@include transition(all 0.25s ease-out);
+	background: $colour-brand;
+	border: none;
+	border-radius: 5px;
+	box-shadow: inset 0px -3px 0 #0086b4;
+	color: white;
+	cursor: pointer;
+	display: inline-block;
+	font-size: inherit;
+	line-height: inherit;
+	height: 40px;
+	outline: 0;
+	overflow: visible;
+	margin: 0;
+	padding: 8px 16px;
+	text-decoration: none;
+	vertical-align: top;
+	width: auto;
+}
+
+.button:hover {
+	background: lighten( $colour-brand, 5% );
+}
+
 .button-anchor {
 	@include appearance(none);
 	background: transparent;
@@ -22,5 +48,6 @@
 .button-anchor:active,
 .button-anchor:focus,
 .button-anchor:hover {
-	color: darken( $colour-anchor, 10% );
+	background: transparent;
+	color: lighten( $colour-anchor, 5% );
 }

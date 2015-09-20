@@ -1,12 +1,14 @@
 .table {
 	background: white;
+	font-size: 14px;
 	margin-bottom: 20px;
 	max-width: 100%;
 	width: 100%;
 
 	@include breakpoint(md) {
-		font-size: 11px;
+		font-size: 12px;
 	}
+
 	@include breakpoint(lg) {
 		font-size: 14px;
 	}
@@ -16,27 +18,46 @@
 	margin-bottom: 0;
 }
 
+
+.table > tbody > tr,
+.table > tfoot > tr {
+	border-top: 1px solid #bababa;
+
+	@include breakpoint(md) {
+		padding: 0;
+	}
+}
+
 .table > thead > tr > th,
 .table > tbody > tr > th,
 .table > tfoot > tr > th,
 .table > thead > tr > td,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
-	border-top: 1px solid #bababa;
 	line-height: 1.42857143;
-	padding: 8px;
+	padding: 4px 8px;
 	vertical-align: top;
+
+	@include breakpoint(md) {
+		border-top: 1px solid #bababa;
+		padding: 8px;
+	}
 }
 
 .table > tbody > tr > th,
 .table > tbody > tr > td {
-	border-top: 1px solid #e5e5e5;
+	border-top: 1px solid transparent;
+
+	@include breakpoint(md) {
+		border-top: 1px solid #e5e5e5;
+	}
 }
 
 .table > thead > tr > th,
 .table > tfoot > tr > th {
 	background: #fafafa;
 	border-bottom: 1px solid #bababa;
+	color: #424242;
 	vertical-align: top;
 }
 
@@ -73,6 +94,10 @@
 
 		&:before {
 			content: attr(title);
+			left: 0;
+			padding: 2px 8px;
+			position: absolute;
+			top: 0;
 		}
 	}
 

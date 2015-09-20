@@ -6,7 +6,7 @@
 {% block head %}
 	{% parent %}
 	<!-- additional style sheets -->
-	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
 {% endblock %}
 
 {% block content %}
@@ -15,18 +15,18 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-3 col-lg-2">
+		<div class="col-sm-4 col-md-3 col-lg-2">
 
 			{% include '../modules/sidebar.html' %}
 
 		</div>
-		<div class="col-md-9 col-lg-10">
+		<div class="col-sm-8 col-md-12 col-lg-10">
 			<div class="main-content">
 
-				<h1 class="heading-type-1">Portfolio valuation $1,427,124.00</h1>
+				<h1 class="type-heading-1">Portfolio valuation <span class="type-value type-highlight">$1,427,124.00</span></h1>
 
-				<h2 class="heading-type-2">Cash</h2>
-				<table class="table table-fixed table-responsive">
+				<h2 class="type-heading-2">Cash</h2>
+				<table class="table table-fixed table-responsive table-portfolio">
 					<thead>
 						<tr>
 							<th colspan="3">&nbsp;</th>
@@ -44,29 +44,29 @@
 									<div class="account-details">BSB 123456 Account no. 12345678</div>
 								</div>
 							</td>
-							<td title="% Rate p.a " colspan="1">3.00</td>
-							<td title="$ Balance " colspan="3">500.40</td>
-							<td title="% Portfolio " colspan="1">0.20</td>
+							<td class="type-value" title="% Rate p.a " colspan="1">3.00</td>
+							<td class="type-value" title="$ Balance " colspan="3">500.40</td>
+							<td class="type-value" title="% Portfolio " colspan="1">0.20</td>
 						</tr>
 						<tr>
 							<td colspan="6">
 								<a href="javascript:;">Income accrued</a>
 								<a href="javascript:;" data-tips="Here is some more information." class="tip-top">{{ macro.iconLabel("question", "More information") }}</a>
 							</td>
-							<td colspan="1">0.00</td>
-							<td colspan="1">0.00</td>
+							<td class="type-value" title="$ Balance " colspan="1">0.00</td>
+							<td class="type-value" title="% Portfolio " colspan="1">0.00</td>
 						</tr>
 					</tbody>
 					<tfoot>
 						<tr>
 							<th colspan="6">Total cash balance</th>
-							<th colspan="1">0.20%</th>
-							<th colspan="1">0.20%</th>
+							<th title="$ Balance " colspan="1">0.20%</th>
+							<th title="% Portfolio " colspan="1">0.20%</th>
 						</tr>
 					</tfoot>
 				</table>	
 
-				<h2 class="heading-type-2">Portfolio</h2>
+				<h2 class="type-heading-2">Portfolio</h2>
 				<table class="table table-fixed table-responsive table-portfolio">
 					<thead>
 						<tr>
@@ -82,12 +82,12 @@
 							<td colspan="4">
 								{{ macro.icon("chevron-down") }}
 								{{ macro.icon("chevron-up") }}
-								<button class="toggle-control button-anchor" data-toggle-target="table-portfolio-details-1" data-toggle-class="table-portfolio-details-hidden" type="button">Managed portfolio</button>
+								<button class="toggle-control button button-anchor" data-toggle-target="table-portfolio-details-1" data-toggle-class="table-portfolio-details-hidden" type="button">Managed portfolio</button>
 							</td>
-							<td colspan="1">472,000.30</td>
-							<td colspan="1">1,233.02</td>
-							<td colspan="1">472,000.30</td>
-							<td colspan="1">98.80</td>
+							<td class="type-value" title="$ Average cost " colspan="1">472,000.30</td>
+							<td class="type-value" title="$ Estimated gain/loss " colspan="1">1,233.02</td>
+							<td class="type-value" title="$ Market value " colspan="1">472,000.30</td>
+							<td class="type-value" title="% Portfolio " colspan="1">98.80</td>
 						</tr>
 						<tr class="table-portfolio-details">
 							<td colspan="8">
@@ -97,62 +97,62 @@
 										<tr>
 											<th colspan="3">Underlying investments</th>
 											<th colspan="1">Quantity</th>
-											<th colspan="1">$ Average cost</th>
-											<th colspan="1">$ Estimated gain/loss</th>
-											<th colspan="1">$ Market value</th>
-											<th colspan="1">% Portfolio</th>
+											<th colspan="1"><span class="type-unit">$</span> Average cost</th>
+											<th colspan="1"><span class="type-unit">$</span> Estimated gain/loss</th>
+											<th colspan="1"><span class="type-unit">$</span> Market value</th>
+											<th colspan="1"><span class="type-unit">%</span> Portfolio</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
 											<td colspan="3">Managed portfolio cash</td>
-											<td title="Quantity " colspan="1">-</td>
-											<td title="$ Average cost " colspan="1">-</td>
-											<td title="$ Estimated gain/loss " colspan="1">0.00</td>
-											<td title="$ Market value " colspan="1">72,000.30</td>
-											<td title="% Portfolio " colspan="1">2.80</td>
+											<td class="type-value" title="Quantity " colspan="1">-</td>
+											<td class="type-value" title="$ Average cost " colspan="1">-</td>
+											<td class="type-value" title="$ Estimated gain/loss " colspan="1">0.00</td>
+											<td class="type-value" title="$ Market value " colspan="1">72,000.30</td>
+											<td class="type-value" title="% Portfolio " colspan="1">2.80</td>
 										</tr>
 										<tr>
 											<td colspan="4">
 												<a href="javascript:;">Income accrued</a>
 												<a href="javascript:;" data-tips="Here is some more information." class="tip-top">{{ macro.iconLabel("question", "More information") }}</a>
 											</td>
-											<td title="$ Average cost " colspan="1">-</td>
-											<td title="$ Estimated gain/loss " colspan="1">-</td>
-											<td title="$ Market value " colspan="1">1,000.30</td>
-											<td title="% Portfolio " colspan="1">2.40</td>
+											<td class="type-value" title="$ Average cost " colspan="1">-</td>
+											<td class="type-value" title="$ Estimated gain/loss " colspan="1">-</td>
+											<td class="type-value" title="$ Market value " colspan="1">1,000.30</td>
+											<td class="type-value" title="% Portfolio " colspan="1">2.40</td>
 										</tr>
 										<tr>
 											<td colspan="3">TEN - TEN NET</td>
-											<td title="Quantity " colspan="1">1,000</td>
-											<td title="$ Average cost " colspan="1">72,000.30</td>
-											<td title="$ Estimated gain/loss " colspan="1">0.00</td>
-											<td title="$ Market value " colspan="1">84,000.30</td>
-											<td title="% Portfolio " colspan="1">10.01</td>
+											<td class="type-value" title="Quantity " colspan="1">1,000</td>
+											<td class="type-value" title="$ Average cost " colspan="1">72,000.30</td>
+											<td class="type-value" title="$ Estimated gain/loss " colspan="1">0.00</td>
+											<td class="type-value" title="$ Market value " colspan="1">84,000.30</td>
+											<td class="type-value" title="% Portfolio " colspan="1">10.01</td>
 										</tr>
 										<tr>
 											<td colspan="3">RHC - RAMSAY</td>
-											<td title="Quantity " colspan="1">21,000</td>
-											<td title="$ Average cost " colspan="1">172,000.30</td>
-											<td title="$ Estimated gain/loss " colspan="1">12,000.00</td>
-											<td title="$ Market value " colspan="1">190,000.30</td>
-											<td title="% Portfolio " colspan="1">25.20</td>
+											<td class="type-value" title="Quantity " colspan="1">21,000</td>
+											<td class="type-value" title="$ Average cost " colspan="1">172,000.30</td>
+											<td class="type-value" title="$ Estimated gain/loss " colspan="1">12,000.00</td>
+											<td class="type-value" title="$ Market value " colspan="1">190,000.30</td>
+											<td class="type-value" title="% Portfolio " colspan="1">25.20</td>
 										</tr>
 										<tr>
 											<td colspan="3">ORI - ORICA</td>
-											<td title="Quantity " colspan="1">1,000</td>
-											<td title="$ Average cost " colspan="1">136,040.30</td>
-											<td title="$ Estimated gain/loss " colspan="1">11,234.00</td>
-											<td title="$ Market value " colspan="1">152,000.30</td>
-											<td title="% Portfolio " colspan="1">23.00</td>
+											<td class="type-value" title="Quantity " colspan="1">1,000</td>
+											<td class="type-value" title="$ Average cost " colspan="1">136,040.30</td>
+											<td class="type-value" title="$ Estimated gain/loss " colspan="1">11,234.00</td>
+											<td class="type-value" title="$ Market value " colspan="1">152,000.30</td>
+											<td class="type-value" title="% Portfolio " colspan="1">23.00</td>
 										</tr>
 										<tr>
 											<td colspan="3">RRL - REGIS</td>
-											<td title="Quantity " colspan="1">1,000</td>
-											<td title="$ Average cost " colspan="1">23,400.30</td>
-											<td title="$ Estimated gain/loss " colspan="1">12,000.00</td>
-											<td title="$ Market value " colspan="1">42,000.30</td>
-											<td title="% Portfolio " colspan="1">12.07</td>
+											<td class="type-value" title="Quantity " colspan="1">1,000</td>
+											<td class="type-value" title="$ Average cost " colspan="1">23,400.30</td>
+											<td class="type-value" title="$ Estimated gain/loss " colspan="1">12,000.00</td>
+											<td class="type-value" title="$ Market value " colspan="1">42,000.30</td>
+											<td class="type-value" title="% Portfolio " colspan="1">12.07</td>
 										</tr>
 									</tbody>
 								</table>
@@ -163,15 +163,15 @@
 					<tbody>
 						<tr>
 							<th colspan="6">Total managed portfolio balanced</th>
-							<th colspan="1">$472,000.00</th>
-							<th colspan="1">98.90%</th>
+							<th class="type-value" title="Market value " colspan="1">$472,000.00</th>
+							<th class="type-value" title="Portfolio " colspan="1">98.90%</th>
 						</tr>
 					</tbody>
 					<tfoot class="table-portfolio-total-valuation">
 						<tr>
 							<th colspan="5">Total portfolio valuation</th>
-							<th colspan="2">$472,500.90</th>
-							<th colspan="1">100.00%</th>
+							<th class="type-value" title="Market value " colspan="2">$472,500.90</th>
+							<th class="type-value" title="Portfolio " colspan="1">100.00%</th>
 						</tr>
 					</tfoot>
 				</table>	

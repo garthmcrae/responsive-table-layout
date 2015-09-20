@@ -1,25 +1,26 @@
-$body-colour: inherit !default;
-$body-font-family: arial, sans-serif !default;
-$body-font-weight: regular !default;
+$colour-body: inherit !default;
+$font-family-body: arial, sans-serif !default;
+$font-weight-body: regular !default;
 $colour-anchor: #006791 !default;
 $unit-base: 8 !default;
 $spacing-horizontal: $unit-base;
 $spacing-vertical: $unit-base;
 
 body {
-	color: $body-colour;
-	font-family: $body-font-family;
-	font-weight: $body-font-weight;
+	color: $colour-body;
+	font-family: $font-family-body;
+	font-weight: $font-weight-body;
 }
 
 a {
+	@include transition(all 0.25s ease-out);
 	color: $colour-anchor;
 }
 
 a:active,
 a:focus,
 a:hover {
-	color: darken( $colour-anchor, 10% );
+	color: lighten( $colour-anchor, 5% );
 }
 
 h1,
@@ -46,16 +47,35 @@ table {
 
 }
 
-.heading-type-1 {
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+.type-heading-1 {
+	color: #838383	;
+	font-family: $font-family-heading; 
 	font-size: em(40);
 	font-weight: 300;
 }
 
-.heading-type-2 {
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif; 
-	font-size: em(30);
+.type-heading-2 {
+	color: #676767;
+	font-family: $font-family-heading; 
+	font-size: em(32);
 	font-weight: 300;
+	margin-top: 32px;
+}
+
+.type-value {
+	font-family: $font-family-value;
+}
+
+td.type-value {
+	font-size: em(14);
+
+	@include breakpoint(md) {
+		font-size: inherit;
+	}
+}
+
+.type-highlight {
+	color: $colour-brand;
 }
 
 .type-unit {

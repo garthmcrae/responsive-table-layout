@@ -21,7 +21,13 @@
 	> tfoot > tr > td,
 	> tbody > tr > th,
 	> tfoot > tr > th {
-		text-align: left;
+		position: relative;
+		text-align: right;
+
+		&:before {
+			font-family: $font-family-body;
+			font-weight: normal;
+		}
 	}
 
 	@include breakpoint(md) {
@@ -74,9 +80,19 @@ tr.table-portfolio-details-hidden {
 	}
 }
 
-.table-portfolio-total-valuation > tr > th {
+.table-responsive.table-portfolio > .table-portfolio-total-valuation > tr > th {
+	color: #676767;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif; 
-	font-size: em(26, 14);
+	font-size: em(18, 14);
 	font-weight: 300;
-	padding-top: 10px;
+	padding-top: 8px;
+
+	&:before {
+		font-weight: 300;
+		padding-top: 8px;
+	}
+
+	@include breakpoint(md) {
+		font-size: em(26, 14);
+	}
 }
